@@ -16,14 +16,18 @@ namespace ApiPlaygroundReDux.Controllers
 
         [HttpGet]
         [Route("api/bananas/{hammock}")]
-        public Sash CrazyTime(int hammock)
+        public HttpResponseMessage CrazyTime(int hammock)
         {
-            return new Sash
+            if (hammock == 0)
             {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "I hate the number 0");
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, new Sash
+               { 
                 Cost = 12,
                 Name = "Divorce Sash",
                 QuantityRemaining = 1
-            };
+            });
         }
 
     }
