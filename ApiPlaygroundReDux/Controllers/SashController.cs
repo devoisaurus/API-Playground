@@ -7,7 +7,6 @@ using System.Web.Http;
 
 namespace ApiPlaygroundReDux.Controllers
 {
-
     public class SashController : ApiController
     {
         public SashController()
@@ -15,8 +14,9 @@ namespace ApiPlaygroundReDux.Controllers
 
         }
 
+        [HttpGet]
         [Route("api/bananas/{hammock}")]
-        public Sash GetSash(int hammock)
+        public Sash CrazyTime(int hammock)
         {
             return new Sash
             {
@@ -25,6 +25,7 @@ namespace ApiPlaygroundReDux.Controllers
                 QuantityRemaining = 1
             };
         }
+
     }
 
     public class Sash
@@ -33,5 +34,4 @@ namespace ApiPlaygroundReDux.Controllers
         public decimal Cost { get; set; }
         public int QuantityRemaining { get; set; }
     }
-
 }
