@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace ApiPlaygroundReDux.Controllers
 {
+
     public class SashController : ApiController
     {
         public SashController()
@@ -14,7 +15,8 @@ namespace ApiPlaygroundReDux.Controllers
 
         }
 
-        public Sash GetSash(int Id)
+        [Route("api/bananas/{hammock}")]
+        public Sash GetSash(int hammock)
         {
             return new Sash
             {
